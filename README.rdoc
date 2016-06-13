@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In rails console, use $client.pull_tweets to query the Twitter search API.
 
-Things you may want to cover:
+The pull_tweets method is in the referral.rb file and search criteria is currently set to
+"refr.cc", returning tweets that have refr.cc in the body.
 
-* Ruby version
+The referrals table stores tweet_id, user screen_name and the entire content of the tweet.
 
-* System dependencies
+We can then query this table for specific coupon codes and match them up with the screen names of users who tweeted them.
 
-* Configuration
+Under config/initializers/twitter.rb, please replace the
+consumer_key
+consumer_secret
+access_token
+access_token_secret
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+with the appropriate strings
